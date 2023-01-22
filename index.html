@@ -221,17 +221,27 @@
       </tr>
 
       <tr>
-        <td>Title</td>
+        <td>IN OPerator</td>
         <td>  
-            content
+            <b>
+              SELECT ProductID, UnitPrice, SupplierID<br>
+              FROM Products<br>
+              WHERE SupplierID IN (9, 10, 11);<br>
+          </b>
         </td>
       </tr>
 
 
       <tr>
-        <td>Title</td>
-        <td>  
-            content
+        <td>OR Operator</td>
+        <td>    
+          <p>DBMS will not evalaute the second condition is a WHERE clause if the first condition is met
+          </p>
+          <b>
+            SELECT ProductName, ProductID, UnitPrice, SupplierID, ProductName<br>
+            FROM Products<br>
+            WHERE ProductName = 'Tofu' OR 'Konbu';<br>
+          </b>
         </td>
       </tr>
 
@@ -362,6 +372,18 @@
     <h4> Foregin Key</h4>
     One or more columns that can be used together to identify a single row in another table..
     </p>
+
+<h4> IN vs. OR</h4>
+<p>
+  In works the same as OR
+  Benefits of IN
+  <ul>
+    <li>Long list of options</li>
+    <li>IN executes faster than OR</li>
+    <li>Don't have to think about the order with IN</li>
+    <li>Can contain another SELECT</li>
+</ul>
+</p>
   
 
   </div> <!-- COLLAPSEABLE DIV ENDS HERE. -->
