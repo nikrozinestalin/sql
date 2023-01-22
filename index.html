@@ -62,21 +62,53 @@
           Price decimal(8, 2) NOT NULL,
           Desc Varchar(750) NULL
           );
+          
+          <p>
+          <b>Note</b>
+          <ol>
+            <li>Primary keys can not be null</li>
+            <li>NULL value doesn't mean empty string or something, it's just nothings there.</li>
+          </ol>
+          </p>
         </td>
       </tr>
       
       <tr>
-        <td>add file to stageing area (index)</td>
-        <td>  
-          git add .  (<i>add all the files in current dir</i>)<br>
-          git add file1
+        <td>Adding/Inserting Data to the Table</td>
+        <td> 
+          INSERT INTO Shoes
+          VALUES('14535974', 'Gucci', 'Slippers', 'Pink', '695.00', NULL);
+          <i> Above query works but not recommended</i>
+          
+          INSERT INTO Shoes (Id, Brand, Type, Color, Price, Desc)
+          VALUES ('14535974', 'Gucci', 'Slippers', 'Pink', '695.00', NULL); 
+          
+          <i> More Recommended : It's Safe and you have more control, You know exactly where the data is going and into which column.</i>
         </td>
       </tr>
       
       <tr>
-        <td>track of staging (index)</td>
+        <td>Temporary Tables</td>
         <td>  
-            git status
+           <p> Create copy of another table<br>
+             Or pull the subset of another table. <br>
+             <b>Note</b><br>
+             <ul>
+               <li> Temporary tables will be deleted when current session is terminated. Thats why it's called temporary table.</li>
+               <li> Useful for complex queries using subsets and joins</li>
+            </ul>
+          
+          <p> pulling subset table from Shoes table .</p>
+          <b>CREATE TEMPORARY TABLE Sandals AS
+            (
+              SELECT * 
+              FROM shoes
+              WHERE shoe_type = 'sandals'
+            )
+          </b>
+          </p>
+  
+          
         </td>
       </tr>
       
