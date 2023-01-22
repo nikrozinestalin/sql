@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Git</title>
+  
+  <!-- Setting up Logo in title -->
+  <link rel="icon" href="git_logo.png" type="image/icon type">
+
+  <!--  CDN of bootstrap -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  
+  
+</head> 
+<body>
+  
+ 
+  
+  <!-- FILTERABLE COMMANDS -->
+  <div class="container">
+    
+    
+  <h2>Quick Search</h2>
+  <p>Search git commands</p>  
+  <input class="form-control" id="myInput" type="text" placeholder="Search..">
+  <br>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Command</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+      <tr>
+        <td>initialize new git repo</td>
+        <td>git init</td>
+      </tr>
+      <tr>
+        <td>profile config</td>
+        <td>  
+            git config --global user.email "me@nikrozine.com" <br>
+            git config --global user.name "my name"
+        </td>
+      </tr>
+      <tr>
+        <td>track of staging (index)</td>
+        <td>  
+            git status
+        </td>
+      </tr>
+      
+      <tr>
+        <td>add file to stageing area (index)</td>
+        <td>  
+          git add .  (<i>add all the files in current dir</i>)<br>
+          git add file1
+        </td>
+      </tr>
+      
+      <tr>
+        <td>track of staging (index)</td>
+        <td>  
+            git status
+        </td>
+      </tr>
+      
+      <tr>
+        <td>commig</td>
+        <td>  
+            git commit -m "msg for commit"
+        </td>
+      </tr>
+      
+      <tr>
+        <td>git history</td>
+        <td>  
+            git log
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+    
+    
+    
+      <!--  TUTORIALS CONTENT GOES HERE -->
+  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Learn</button>
+  <div id="demo" class="collapse">
+    
+  <p>
+  <h4> Primarykey</h4><br>
+  A column (or set of columns) whose values uniquely identify every row in a table.<br>
+    defenition 2: if you have a long list of rows, it's essential to have something that uniquely identifies each row, and that's called the "primary key"l. 
+   <br>A primary key is a column of unique values for each row.
+  </p>
+  <p>
+    <h4> Foregin Key</h4>
+    One or more columns that can be used together to identify a single row in another table..
+    </p>
+  
+
+  </div> <!-- COLLAPSEABLE DIV ENDS HERE. -->
+
+</div> <!-- "container" CLASS DIV ENDS HERE. -->
+  
+
+  
+  
+  <!-- SCRIPT FOR SEARCH IN TABLE -->
+  <script>
+    $(document).ready(function(){
+      $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#myTable tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+  </script>
+  
+</body>
+</html>
