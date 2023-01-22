@@ -1,10 +1,10 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>Git</title>
+  <title>SQL</title>
   
   <!-- Setting up Logo in title -->
-  <link rel="icon" href="git_logo.png" type="image/icon type">
+  <link rel="icon" href="" type="image/icon type">
 
   <!--  CDN of bootstrap -->
   <meta charset="utf-8">
@@ -25,7 +25,7 @@
     
     
   <h2>Quick Search</h2>
-  <p>Search git commands</p>  
+  <p>Search SQL Queries</p>  
   <input class="form-control" id="myInput" type="text" placeholder="Search..">
   <br>
   <table class="table table-bordered table-striped">
@@ -37,20 +37,31 @@
     </thead>
     <tbody id="myTable">
       <tr>
-        <td>initialize new git repo</td>
-        <td>git init</td>
-      </tr>
-      <tr>
-        <td>profile config</td>
-        <td>  
-            git config --global user.email "me@nikrozine.com" <br>
-            git config --global user.name "my name"
+        <td>Select statement</td>
+        <td>SELECT prod_name, prod_id, prod_price FROM Products;<br>
+          SELECT * FROM Products; (asterisk (*) wildcard character for all columns)
         </td>
       </tr>
       <tr>
-        <td>track of staging (index)</td>
+        <td>LIMIT in select statement</td>
         <td>  
-            git status
+          <b>SQLite</b> SELECT prod_name FROM Products LIMITS 5;<br>
+          <b>Oracle</b> SELECT prod_name FROM Products WHERE ROWNUM <=5;<br>
+          <b>DB2</b> SELECT prod_name FROM Products FETCH FIRST 5 ROWS ONLY;<br>
+        </td>
+      </tr>
+      <tr>
+        <td>CREATE TABLE</td>
+        <td>  
+            CREATE TABLE Shoes
+          (
+          Id char(10) PRIMARY KEY,
+          Brand char(10) NOT NULL,
+          Type char(250) NOT NULL,
+          Color char(250) NOT NULL,
+          Price decimal(8, 2) NOT NULL,
+          Desc Varchar(750) NULL
+          );
         </td>
       </tr>
       
@@ -92,8 +103,16 @@
   <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Learn</button>
   <div id="demo" class="collapse">
     
+    <h2>SQL</h2>
+    <p>Structured Query Language(SQL) is a standard computer language for relational database management and data manipulation</p>
+    
+    
+    <h3>Data Modeling</h3>
+    <p>Organizes the structures information into multiple, related tables.<br>
+      Can represent a business process or shows relationships between business processes</p>
+    
   <p>
-  <h4> Primarykey</h4><br>
+  <h4> Primarykey</h4>
   A column (or set of columns) whose values uniquely identify every row in a table.<br>
     defenition 2: if you have a long list of rows, it's essential to have something that uniquely identifies each row, and that's called the "primary key"l. 
    <br>A primary key is a column of unique values for each row.
