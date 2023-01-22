@@ -132,11 +132,91 @@
           
         </td>
       </tr>
+
+
+<tr>
+        <td>Operators</td>
+        <td>  
+            <table>
+              <th>
+                <td>Operator</td>
+                <td>Description</td>
+              </th>
+              <tr>
+                <td>=</td>
+                <td>Equals</td>
+              </tr>
+              <tr>
+                <td>=</td>
+                <td>Equals</td>
+              </tr>
+              <tr>
+                <td><></td>
+                <td>Not Equals</td>
+              </tr>
+              <tr>
+                <td><</td>
+                <td>Less than</td>
+              </tr>
+              <tr>
+                <td>></td>
+                <td>Greater than</td>
+              </tr>
+              <tr>
+                <td><=</td>
+                <td>Less than or Equals</td>
+              </tr>
+              <tr>
+                <td>>=</td>
+                <td>Greater than or Equals</td>
+              </tr>
+              <tr>
+                <td>BETWEEN</td>
+                <td>Between an inclusive range</td>
+              </tr>
+              <tr>
+                <td>IS NULL</td>
+                <td>Is a null value</td>
+              </tr>
+            </table>
+        </td>
+      </tr>
       
       <tr>
-        <td>Title</td>
+        <td>Where Caluse</td>
         <td>  
-            content
+            <b>
+              SELECT ProductName, UnitPrice, SupplierID<br>
+              FROM Products<br>
+              WHERE ProductName = 'Tofu';<br>
+          </b>
+          <p>Filtering a single value</p>
+          <b>
+            SELECT ProductName, UnitPrice, SupplierId<br>
+            FROM Products<br>
+            WHERE UnitPrice >=75;<br>
+          </b>
+          
+          <p> Checking for Non-Matches</p>
+          <b>
+            SELECT ProductName, UnitPrice, SupplierId<br>
+            FROM Products<br>
+            WHERE ProudctName <> 'Alice Mutton';
+          </b>
+            
+            <p> Filtering with Range of values</p>
+            <b>
+              SELECT ProductName, UnitPrice, SupplierID, UnitInStock<br>
+              FROM Products<br>
+              WHERE UnitInStock BETWEEN 15 AND 80;<br>
+            </b>
+            
+            <p>Filtering No value</p>
+            <b>
+              SELECT ProductName, UnitPrice, SupplierID, UnitInStock<br>
+              FROM Products<br>
+              WHERE ProductName IS NULL;<br>
+            </b>
         </td>
       </tr>
 
